@@ -1,6 +1,6 @@
 Name:           librem
 Version:        0.4.3
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Realtime audio processing library (runtime)
 
 License:        BSD
