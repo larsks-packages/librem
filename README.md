@@ -1,9 +1,9 @@
-This `README` was generated automatically using `rpm-build-readme` at Sat Sep 28 22:15:46 EDT 2013.
+This `README` was generated automatically using `rpm-update-readme` at Sun Sep 29 09:17:08 EDT 2013.
 
 Packages built by this spec file
 ================================
 
-rem
+librem
 -------------------------------------
 
 Librem is a portable and generic library for real-time audio and video
@@ -11,7 +11,8 @@ processing.
 
 This package contains the runtime libraries necessary to run programs
 linked against re.
-rem-devel
+
+librem-devel
 -------------------------------------
 
 Librem is a portable and generic library for real-time audio and video
@@ -19,12 +20,14 @@ processing.
 
 This package contains the libraries and header files necessary to compile
 code that uses re.
-rem-debuginfo
+
+librem-debuginfo
 -------------------------------------
 
-This package provides debug information for package rem.
+This package provides debug information for package librem.
 Debug information is useful when developing applications that use this
 package or when debugging this package.
+
 
 Sources used by this spec file
 ==============================
@@ -34,4 +37,4 @@ Sources used by this spec file
 Requirements for building this package
 ======================================
 
-- re-devel
+- libre-devel

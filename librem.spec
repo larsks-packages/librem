@@ -1,14 +1,13 @@
-Name:           rem
+Name:           librem
 Version:        0.4.3
 Release:        1%{?dist}
 Summary:        Realtime audio processing library (runtime)
 
 License:        BSD
 URL:            http://www.creytiv.com/rem.html
-Source0:        http://www.creytiv.com/pub/%{name}-%{version}.tar.gz
+Source0:        http://www.creytiv.com/pub/rem-%{version}.tar.gz
 
-BuildRequires:  re-devel
-Requires:       re
+BuildRequires:  libre-devel
 
 %description
 Librem is a portable and generic library for real-time audio and video
@@ -30,8 +29,7 @@ code that uses re.
 
 
 %prep
-%setup -q
-
+%setup -q -n rem-%{version}
 
 %build
 make %{?_smp_mflags} LIBDIR=%{_libdir}
