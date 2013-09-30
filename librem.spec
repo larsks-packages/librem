@@ -1,11 +1,12 @@
 Name:           librem
 Version:        0.4.3
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Realtime audio processing library (runtime)
 
 License:        BSD
 URL:            http://www.creytiv.com/rem.html
 Source0:        http://www.creytiv.com/pub/rem-%{version}.tar.gz
+Patch100:       librem-0.4.3-lib-version.patch
 
 BuildRequires:  libre-devel
 
@@ -30,6 +31,7 @@ code that uses re.
 
 %prep
 %setup -q -n rem-%{version}
+%patch100 -p1 -b.libversion
 
 %build
 make %{?_smp_mflags} LIBDIR=%{_libdir}
@@ -37,17 +39,18 @@ make %{?_smp_mflags} LIBDIR=%{_libdir}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%make_install LIBDIR=%{_libdir} MKDIR=%{_datadir}/re
-
+%make_install LIBDIR=%{_libdir} MKDIR=%{_datadir}/rem
+rm -f $RPM_BUILD_ROOT%{_libdir}/librem.a
+ln -s librem.so.%{version} $RPM_BUILD_ROOT%{_libdir}/librem.so
 
 %files
 %doc docs/*
-
-%{_libdir}/librem.so
+%{_libdir}/librem.so.*
 
 %files devel
-%{_includedir}/rem/
-%{_libdir}/librem.a
+%dir %{_includedir}/rem/
+%{_includedir}/rem/*
+%{_libdir}/librem.so
 
 %post -p /sbin/ldconfig
 

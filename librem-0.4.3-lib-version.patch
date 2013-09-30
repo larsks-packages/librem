@@ -1,0 +1,22 @@
+diff --git a/Makefile b/Makefile
+index 017d2c1..1ee7dc6 100644
+--- a/Makefile
++++ b/Makefile
+@@ -62,7 +62,7 @@ endif
+ 
+ 
+ MODMKS	:= $(patsubst %,src/%/mod.mk,$(MODULES))
+-SHARED  := librem$(LIB_SUFFIX)
++SHARED  := librem$(LIB_SUFFIX).$(VERSION)
+ STATIC	:= librem.a
+ 
+ 
+@@ -81,7 +81,7 @@ all: $(SHARED) $(STATIC)
+ 
+ $(SHARED): $(OBJS)
+ 	@echo "  LD      $@"
+-	@$(LD) $(LFLAGS) $(SH_LFLAGS) $^ -L$(LIBRE_SO) -lre $(LIBS) -o $@
++	@$(LD) $(LFLAGS) $(SH_LFLAGS) $^ -L$(LIBRE_SO) -lre $(LIBS) -o $@ -Wl,-soname,$(SHARED)
+ 
+ 
+ $(STATIC): $(OBJS)
