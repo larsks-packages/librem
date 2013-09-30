@@ -39,7 +39,7 @@ make %{?_smp_mflags} LIBDIR=%{_libdir}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%make_install LIBDIR=%{_libdir} MKDIR=%{_datadir}/rem
+%make_install LIBDIR=%{_libdir}
 rm -f $RPM_BUILD_ROOT%{_libdir}/librem.a
 ln -s librem.so.%{version} $RPM_BUILD_ROOT%{_libdir}/librem.so
 
@@ -58,7 +58,7 @@ ln -s librem.so.%{version} $RPM_BUILD_ROOT%{_libdir}/librem.so
 
 %changelog
 
-* Sun Sep 30 2013 Lars Kellogg-Stedman <lars@redhat.com> 0.4.3-3
+* Sun Sep 29 2013 Lars Kellogg-Stedman <lars@redhat.com> 0.4.3-3
 - generated versioned shared library
 - ensure correct ownership of directories
 - remove static library from devel package
