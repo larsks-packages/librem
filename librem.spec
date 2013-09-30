@@ -58,6 +58,11 @@ ln -s librem.so.%{version} $RPM_BUILD_ROOT%{_libdir}/librem.so
 
 %changelog
 
+* Sun Sep 30 2013 Lars Kellogg-Stedman <lars@redhat.com> 0.4.3-3
+- generated versioned shared library
+- ensure correct ownership of directories
+- remove static library from devel package
+
 * Fri Sep 27 2013 Lars Kellogg-Stedman <lars@redhat.com> 0.4.3-1
 - initial package
 
